@@ -50,4 +50,25 @@ export async function getTextByIndex(page:Page, locator:string, index:number, el
    return result;
 }//end of getTextByIndex method
 
+//method to hover on any unique element
+export async function mouseHover(page:Page, locator:string, elementName:string) {
+   console.log("Hovering on " + elementName);
+   await page.locator(locator).hover();
+}//end of hover method
+
+//method to scrollbypixels
+export async function scrollByPixels(page:Page, horizontalValue:number, verticalValue:number) {
+   console.log("Scrolling by pixels");
+   {
+      await page.evaluate(({x, y}) => {window.scrollBy(x, y);}, {x: horizontalValue, y: verticalValue});
+   }
+}//end of scrollByPixels method
+
+//method for mouseHoverByIndex
+export async function mouseHoverByIndex(page:Page, locator:string, index:number, elementName:string) {
+   console.log("Hovering on " + elementName);
+   await page.locator(locator).nth(index).hover();
+}//end of mouseHoverByIndex method  
+
+
 
