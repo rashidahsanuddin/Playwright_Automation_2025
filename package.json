@@ -1,0 +1,38 @@
+{
+  "name": "playwright_automation_2025",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "bingTest": "npx playwright  test src/test/Day1_112525/T1_Bing_Search.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+  "uspsTest": "npx playwright  test src/test/Day2_120125/T1_MouseHover_USPS.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+  "smokeSuite": "npx playwright test --grep @smoke --headed --workers=1 --project=chromium --reporter=html",
+  "bingTestLoop": "npx playwright test src/test/Day2_120125/T2_Bing_Search_Loop.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+  "bingTestCB": "npx playwright  test src/test/Day1_112525/T1_Bing_Search.spec.ts --headed --workers=1 --project=chromium --project=firefox --project=safari --reporter=html",
+  "uspsParallel": "npx playwright test src/test/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=2 --project=chromium --reporter=html",
+   "WeightWatchersAI": "npx playwright  test src/test/Action_Item/Weight_Watchers_AI.spec.ts --headed --workers=2 --project=chromium --project=safari --reporter=html",
+   "bingReusable": "npx playwright  test src/test/Action_Item/Bing_Search_Reusable.spec.ts --headed --workers=1 --project=chromium --reporter=html"
+
+
+
+
+
+
+ },
+ "repository": {
+   "type": "git",
+   "url": "git+https://github.com/rashidahsanuddin/Rashid_Selenium_Automation_2025.git"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "type": "commonjs",
+ "bugs": {
+   "url": "https://github.com/rashidahsanuddin/Rashid_Selenium_Automation_2025/issues"
+ },
+ "homepage": "https://github.com/rashidahsanuddin/Rashid_Selenium_Automation_2025#readme",
+ "devDependencies": {
+   "@playwright/test": "^1.57.0",
+   "@types/node": "^24.10.1"
+ }
+}
