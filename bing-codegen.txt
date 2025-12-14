@@ -1,0 +1,21 @@
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({
+    headless: false
+  });
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('https://www.bing.com/');
+  await page.getByRole('textbox', { name: 'characters out of 2000' }).click();
+  await page.getByRole('textbox', { name: 'characters out of 2000' }).fill('playwright');
+  await page.getByText('About 591,000 results').click();
+  await page.getByRole('link', { name: 'All', exact: true }).click();
+  await page.getByLabel('Search Results').locator('div').filter({ hasText: 'InstallationPlaywright' }).click();
+  await page.locator('body').press('Escape');
+  await page.close();
+
+  // ---------------------
+  await context.close();
+  await browser.close();
+})();

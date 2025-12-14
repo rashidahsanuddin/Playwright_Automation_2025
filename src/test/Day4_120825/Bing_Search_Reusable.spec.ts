@@ -1,15 +1,13 @@
-import { Page, test } from "@playwright/test";
-import { getText, type } from "../../Reusable_Actions";
 
+import { Page, test } from "@playwright/test";
+import { getText, type } from "../Reusable_Actions";
 
 let page: Page; //initialize page variable for browser since we are calling multiple tests
 
-
-test.beforeAll( async ({ browser }) => {
+test.beforeAll(async ({ browser }) => {
    //launch browser
    page = await browser.newPage();
 });
-
 
 test('Search for playwright keyword on bing', async () => {
    await page.goto('https://www.bing.com');
@@ -18,10 +16,13 @@ test('Search for playwright keyword on bing', async () => {
    await page.keyboard.press('Enter'); //hit enter key after typing
 });
 
-
-test('Capture search result for playwright keyword on bing', async () => {
-   let searchResults = await getText(page, '[class="sb_count"]', 'Search Results Text');
-   console.log('Search Results: ', searchResults);
-   let searchnumber = searchResults?.split(' ');
-   console.log('Search Number for Playwright: ', searchnumber ? searchnumber[1] : 'No results found');
-});
+//test('capture search number on bing for playwright keyword', async ({}) => {
+    //let searchResult = await getText(page, '[class="sb_count"]', 'search result text');
+    //if (searchResult) {
+        //console.log('Search result text is: ' + searchResult);
+        //let searchnumber = searchResult.split(' ');
+        //console.log('Search number is: ' + searchnumber[1]);
+    //} else {
+        //console.log('Search result text not found.');
+    //}
+//});
