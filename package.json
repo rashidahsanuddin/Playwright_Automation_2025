@@ -11,7 +11,7 @@
   "bingTestCB": "npx playwright  test src/test/Day1_112525/T1_Bing_Search.spec.ts --headed --workers=1 --project=chromium --project=firefox --project=safari --reporter=html",
   "uspsParallel": "npx playwright test src/test/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=2 --project=chromium --reporter=html",
    "WeightWatchersAI": "npx playwright  test src/test/Action_Item/Weight_Watchers_AI.spec.ts --headed --workers=2 --project=chromium --project=safari --reporter=html",
-   "bingReusable": "npx playwright  test src/test/Action_Item/Bing_Search_Reusable.spec.ts --headed --workers=1 --project=chromium --reporter=html"
+   "bingReusable": "npx playwright  test src/test/Action_Item/Bing_Search_Reusable.spec.ts --workers=1 --project=chromium --reporter=html"
 
 
 
@@ -33,6 +33,6 @@
  "homepage": "https://github.com/rashidahsanuddin/Rashid_Selenium_Automation_2025#readme",
  "devDependencies": {
    "@playwright/test": "^1.57.0",
-   "@types/node": "^24.10.1"
+   "@types/node": "^25.0.1"
  }
 }
